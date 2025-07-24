@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Fresh - Plant Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2e7d32',
+                        'primary-dark': '#1b5e20',
+                        'secondary': '#ff9800',
+                        'accent': '#f5f5f5',
+                        'text-dark': '#333333',
+                        'text-light': '#666666'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spin-animation {
+            animation: spin 4s linear infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-dark bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 px-6 md:px-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Always Fresh</h1>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">Plants</a>
+                <a href="#" class="hover:text-primary transition-colors">Features</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="flex items-center hover:text-primary transition-colors">
+                    <i class="fas fa-shopping-cart mr-1"></i>
+                    Cart
+                </a>
+            </div>
+            
+            <!-- Mobile Menu (Cart only) -->
+            <div class="md:hidden flex items-center">
+                <a href="#" class="flex items-center text-primary">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="py-12 px-6 md:px-12 bg-accent">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-primary">FLOWERS</h2>
+                <p class="text-lg text-text-light mb-6">Bringing nature's beauty into your home with our fresh flowers and plants. Carefully selected for quality and freshness.</p>
+                <button class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg transition-colors">
+                    Shop Now
+                </button>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 flex items-center justify-center text-gray-500">
+                    <span>Banner Image</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plants Section -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Our Plants</h2>
+            <p class="text-text-light mb-12 max-w-2xl mx-auto">Fresh from the garden to your home. Explore our collection of premium plants and flowers.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Plant Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Flower & Plants</h3>
+                        <p class="text-primary font-medium mb-3">$19.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Loves</h3>
+                        <p class="text-primary font-medium mb-3">$24.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Loved Dolls</h3>
+                        <p class="text-primary font-medium mb-3">$29.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">The 401 Label Plant</h3>
+                        <p class="text-primary font-medium mb-3">$34.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Additional cards to make 8 total -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Sunshine Bloom</h3>
+                        <p class="text-primary font-medium mb-3">$22.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Green Paradise</h3>
+                        <p class="text-primary font-medium mb-3">$27.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Peace Lily</h3>
+                        <p class="text-primary font-medium mb-3">$21.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center text-gray-500">
+                        <span>Plant Image</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1">Desert Cactus</h3>
+                        <p class="text-primary font-medium mb-3">$18.99</p>
+                        <button onclick="addToCart()" class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-md transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plants Lover Section -->
+    <section class="py-16 px-6 bg-accent">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 relative">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center text-gray-500">
+                    <span>Plant Lover Image</span>
+                </div>
+                <!-- Trusted Plant Lover Badge (Challenge) -->
+                <div class="absolute -top-4 -right-4 hidden md:block">
+                    <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center spin-animation">
+                        <i class="fas fa-check text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+                <h2 class="text-3xl font-bold mb-6">Plant Lover</h2>
+                <p class="text-text-light mb-6">Jane Richardson is a passionate plant lover with over 10 years of experience in horticulture.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary mr-3 mt-1"></i>
+                        <span>Expert care tips for all plant types</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary mr-3 mt-1"></i>
+                        <span>Quality plants sourced from sustainable growers</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary mr-3 mt-1"></i>
+                        <span>Fast and careful delivery to your doorstep</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary mr-3 mt-1"></i>
+                        <span>30-day plant health guarantee</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary mr-3 mt-1"></i>
+                        <span>Personalized recommendations for your space</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Deal Section (Challenge) -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Latest Deals</h2>
+            <p class="text-text-light mb-8 max-w-2xl mx-auto">Special offers on our most popular plants. Limited time only!</p>
+            
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                <div class="md:flex">
+                    <div class="md:shrink-0">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48 md:h-full md:w-48 flex items-center justify-center text-gray-500">
+                            <span>Deal Image</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-secondary font-semibold">Summer Special</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-medium">Tropical Paradise Bundle</h3>
+                        <p class="mt-2 text-text-light">Get 3 exotic tropical plants for the price of 2. Perfect for bringing a vacation vibe to your home.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div>
+                                <span class="text-xl font-bold text-primary">$49.99</span>
+                                <span class="ml-2 text-sm text-text-light line-through">$74.97</span>
+                            </div>
+                            <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors">
+                                Grab Deal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="py-20 px-6 bg-primary text-white text-center relative">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Join the Colorful Bunch</h2>
+            <p class="max-w-2xl mx-auto mb-8">Subscribe to our newsletter for exclusive offers, plant care tips, and new arrivals.</p>
+            
+            <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-3 rounded-md text-text-dark focus:outline-none">
+                <button class="bg-secondary hover:bg-orange-600 text-white px-6 py-3 rounded-md transition-colors">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-dark text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Always Fresh</h3>
+                    <p class="max-w-xs text-gray-300">Bringing nature's beauty to your doorstep with premium plants and flowers.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shop</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Features</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">New Arrivals</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Best Sellers</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Plant Care</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Gift Cards</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 Always Fresh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function for Add to Cart button (optional part)
+        function addToCart() {
+            alert("Flower Added to Cart");
+        }
+    </script>
+</body>
+</html>

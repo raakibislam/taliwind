@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Market</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-md">
+    <h1 class="text-2xl font-bold text-green-700">Flower Market</h1>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#" class="text-gray-600 hover:text-green-700">Home</a>
+      <a href="#" class="text-gray-600 hover:text-green-700">Features</a>
+      <a href="#" class="text-gray-600 hover:text-green-700">Deals</a>
+      <a href="#" class="text-gray-600 hover:text-green-700">About</a>
+      <img src="./images/cart.svg" alt="cart" class="w-6 h-6">
+    </nav>
+    <div class="flex md:hidden items-center space-x-2">
+      <span class="text-sm font-medium text-green-700">Cart</span>
+      <img src="./images/cart.svg" alt="cart" class="w-6 h-6">
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="flex flex-col-reverse md:flex-row items-center px-6 py-10">
+    <div class="w-full md:w-1/2">
+      <h2 class="text-3xl font-bold text-green-800 mb-4">Brighten Your Day with Blossoms</h2>
+      <p class="text-gray-700 mb-6">Explore a vibrant selection of plants to add color and life to your home.</p>
+      <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Shop Now</button>
+    </div>
+    <div class="w-full md:w-1/2 mb-6 md:mb-0">
+      <img src="./images/banner.png" alt="banner" class="w-full rounded-lg" />
+    </div>
+  </section>
+
+  <!-- Plants Section -->
+  <section class="px-6 py-10 text-center">
+    <h2 class="text-2xl font-bold text-green-700">Our Favorite Plants</h2>
+    <p class="text-gray-500 mb-8">Carefully picked just for you</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Repeat this card 8 times -->
+      <div class="bg-white border p-4 rounded shadow">
+        <img src="./images/plant1.png" alt="Plant" class="w-full h-40 object-cover mb-2" />
+        <h3 class="font-semibold text-lg">Snake Plant</h3>
+        <p class="text-green-600">$12.99</p>
+        <button onclick="alert('Flower Added to Cart')" class="mt-2 w-full bg-green-500 text-white py-1 rounded hover:bg-green-600">Add to Cart</button>
+      </div>
+      <!-- More cards... -->
+    </div>
+  </section>
+
+  <!-- Plant Lover Section -->
+  <section class="flex flex-col md:flex-row items-center px-6 py-10 bg-gray-50 relative">
+    <div class="w-full md:w-1/2 mb-6 md:mb-0 relative">
+      <img src="./images/plant-lover.png" alt="Plant Lover" class="rounded-lg" />
+      <span class="absolute top-2 left-2 bg-yellow-400 text-xs px-2 py-1 rounded-full hidden md:inline-block animate-spin">Trusted</span>
+    </div>
+    <div class="w-full md:w-1/2 md:pl-10">
+      <h2 class="text-2xl font-bold text-green-800 mb-4">Why Plant Lovers Choose Us</h2>
+      <ul class="list-disc list-inside text-gray-600">
+        <li>Freshest plants available</li>
+        <li>Fast delivery all over the country</li>
+        <li>Plant care tips from experts</li>
+        <li>Eco-friendly packaging</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Join Section -->
+  <section class="text-center py-12 px-6 bg-cover bg-center" style="background-image: url('./images/join-bg.jpg');">
+    <h2 class="text-3xl font-bold text-white mb-4">Join the Colorful Bunch</h2>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+      <input type="email" placeholder="Enter your email" class="px-4 py-2 w-64 rounded text-gray-800" />
+      <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+    <h1 class="text-xl font-bold mb-4 md:mb-0">Flower Market</h1>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:text-green-400">Home</a></li>
+      <li><a href="#" class="hover:text-green-400">Features</a></li>
+      <li><a href="#" class="hover:text-green-400">About</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
